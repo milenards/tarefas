@@ -1,8 +1,7 @@
-<?php
-
+<?php 
 $servidor = '127.0.0.1';
 $banco = 'bd_tarefas';
-$usuario = 'root1';
+$usuario = 'root';
 $senha = '';
 
 try{
@@ -10,5 +9,5 @@ try{
 }catch(Exception  $e){
     echo "Erro na conexão: $e";
     exit();
-}
+} 
 ?>
