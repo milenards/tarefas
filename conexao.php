@@ -6,8 +6,8 @@ $usuario = 'root1';
 $senha = '';
 
 try{
-$conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
-}catch  (exceptio $e){
+    $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
+}catch(Exception  $e){
     echo "Erro na conexão: $e";
     exit();
 }
