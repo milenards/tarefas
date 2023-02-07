@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <!--- header  --->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +20,7 @@
             background-blend-mode: screen, color-dodge, overlay, difference, normal;
         }
 
-        .fundo-cinza{
+        .fundo-cinza {
             background-color: #f4f6f7;
         }
     </style>

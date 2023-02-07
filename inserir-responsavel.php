@@ -1,9 +1,9 @@
 <?php
-$tarefa = $_POST['tarefa'];
+$respon = $_POST['respon'];
 
 include "conexao.php";
 
-$sqlGravar = "insert into t_tarefas(descricao) values('$tarefa')";
+$sqlGravar = "insert into t_tarefas(responsavel) values('$respon')";
 
 mysqli_query($conexao, $sqlGravar);
 
