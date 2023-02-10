@@ -32,27 +32,30 @@
 </ul>
 
 
-<ul class="list-group mb-0">
+<table class="table">
     <?php
     include "conexao.php";
     $sqlBusca = "select * from t_tarefas";
     $todasAsTarefas = mysqli_query($conexao, $sqlBusca);
     while ($umaTarefa = mysqli_fetch_assoc($todasAsTarefas)) {
     ?>
-        <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded fundo-cinza fw-lighter justify-content-between">
-            <?php echo $umaTarefa['id']; ?> -
-            <?php echo $umaTarefa['descricao']; ?>
-            <?php echo $umaTarefa['responsavel']; ?>     
-            <span>
-                <a class='btn btn-warning' href="alterar-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-pencil-fill"></i></a>
-                <a class='btn btn-danger' href="excluir-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
-                <a class="responsavel" href="alterar-tarefa.php?responsavel=<?php echo $umaTarefa['responsavel'];?>"></a>
-            </span>
-        </li>
+        
+            <tr>
+                <td><?php echo $umaTarefa['id']; ?></td>
+                <td><?php echo $umaTarefa['descricao']; ?></td>
+                <td><?php echo $umaTarefa['responsavel']; ?></td>     
+                <td><span>
+                    <a class='btn btn-warning' href="alterar-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-pencil-fill"></i></a>
+                    <a class='btn btn-danger' href="excluir-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
+                    <a class="responsavel" href="alterar-tarefa.php?responsavel=<?php echo $umaTarefa['responsavel'];?>"></a>
+                </span>
+                </td>
+            </tr>
+        
     <?php
     }
     mysqli_close($conexao);
     ?>
-</ul>
+</table>
 <!--- FIM Conteudo --->
 <?php include_once "footer.php"; ?>
