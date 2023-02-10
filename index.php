@@ -8,7 +8,7 @@
 <!--inicio conteudo -->
 
 
-<form class="d-flex justify-content-center align-items-center mb-4" action="inserir-tarefa.php && inserir-responsavel.php" method="post">
+<form class="d-flex justify-content-center align-items-center mb-4" action="inserir-tarefa.php" method="post">
     <div class="form-outline flex-fill">
         <input type="text" id="form2" class="form-control" placeholder="Nova tarefa" name="tarefa">
     </div>
@@ -42,10 +42,11 @@
         <li class="list-group-item d-flex align-items-center border-0 mb-2 rounded fundo-cinza fw-lighter justify-content-between">
             <?php echo $umaTarefa['id']; ?> -
             <?php echo $umaTarefa['descricao']; ?>
-            <?php echo $umaTarefa['responsavel']; ?>
+            <?php echo $umaTarefa['responsavel']; ?>     
             <span>
                 <a class='btn btn-warning' href="alterar-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-pencil-fill"></i></a>
                 <a class='btn btn-danger' href="excluir-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
+                <a class="responsavel" href="alterar-tarefa.php?responsavel=<?php echo $umaTarefa['responsavel'];?>"></a>
             </span>
         </li>
     <?php
