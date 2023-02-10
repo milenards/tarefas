@@ -15,6 +15,9 @@
     <div class="form-outline flex-fill">
         <input type="text" id="form2" class="form-control" placeholder="responsavel" name="responsavel">
     </div>
+    <div class="form-outline flex-fill">
+        <input type="text" id="form2" class="form-control" placeholder="status" name="status">
+    </div>
     <button type="submit" class="btn btn-primary ms-2 text-light"><i class="bi bi-save-fill"></i> ADD</button>
 </form>
 
@@ -39,19 +42,20 @@
     $todasAsTarefas = mysqli_query($conexao, $sqlBusca);
     while ($umaTarefa = mysqli_fetch_assoc($todasAsTarefas)) {
     ?>
-        
-            <tr>
-                <td><?php echo $umaTarefa['id']; ?></td>
-                <td><?php echo $umaTarefa['descricao']; ?></td>
-                <td><?php echo $umaTarefa['responsavel']; ?></td>     
-                <td><span>
+
+        <tr>
+            <td><?php echo $umaTarefa['id']; ?></td>
+            <td><?php echo $umaTarefa['descricao']; ?></td>
+            <td><?php echo $umaTarefa['responsavel']; ?></td>
+            <td><?php echo $umaTarefa['status']; ?></td>
+            <td><span>
                     <a class='btn btn-warning' href="alterar-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-pencil-fill"></i></a>
                     <a class='btn btn-danger' href="excluir-tarefa.php?id=<?php echo $umaTarefa['id']; ?>"><i class="bi bi-trash3-fill"></i></a>
-                    <a class="responsavel" href="alterar-tarefa.php?responsavel=<?php echo $umaTarefa['responsavel'];?>"></a>
+                    <a class="responsavel" href="alterar-tarefa.php?responsavel=<?php echo $umaTarefa['responsavel']; ?>"></a>
                 </span>
-                </td>
-            </tr>
-        
+            </td>
+        </tr>
+
     <?php
     }
     mysqli_close($conexao);
